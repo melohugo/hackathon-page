@@ -1,10 +1,16 @@
 :root {
   --background: #050505;
-  --foreground: #e0e0e0;
-  --neon-cyan: #00f3ff;
-  --neon-magenta: #ff00ff;
-  --neon-lime: #39ff14;
-  --grid-color: rgba(0, 243, 255, 0.05);
+  --foreground: #ffffff;
+  --pmi-orange: #FF6B00;
+  --pmi-purple: #8A2BE2;
+  --pmi-blue: #00D1FF;
+  --pmi-white: #FFFFFF;
+  
+  --neon-primary: var(--pmi-orange);
+  --neon-secondary: var(--pmi-purple);
+  --neon-accent: var(--pmi-blue);
+  
+  --grid-color: rgba(255, 107, 0, 0.03);
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -25,7 +31,7 @@ body {
   position: relative;
 }
 
-/* Base Cyberpunk Background Grid */
+/* Background Malha */
 body::before {
   content: "";
   position: fixed;
@@ -33,10 +39,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-image: url('/assets/Malha completa.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
   z-index: -1;
   pointer-events: none;
 }
@@ -51,18 +57,12 @@ body::after {
   height: 100%;
   background: linear-gradient(
     rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.1) 50%
-  ),
-  linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 0.03),
-    rgba(0, 255, 0, 0.01),
-    rgba(0, 0, 255, 0.03)
+    rgba(0, 0, 0, 0.15) 50%
   );
-  background-size: 100% 4px, 3px 100%;
+  background-size: 100% 4px;
   z-index: 1000;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 * {
@@ -72,21 +72,31 @@ body::after {
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  color: var(--pmi-white);
 }
 
 a {
-  color: var(--neon-magenta);
+  color: var(--pmi-blue);
   text-decoration: none;
   transition: all 0.3s ease;
-}
-
-a:hover {
-  text-shadow: 0 0 8px var(--neon-magenta);
 }
 
 button {
   cursor: pointer;
   font-family: inherit;
+}
+
+/* Custom Scrollbar for Cyberpunk feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pmi-purple);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pmi-orange);
 }
