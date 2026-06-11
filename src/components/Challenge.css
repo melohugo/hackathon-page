@@ -1,0 +1,125 @@
+.challenge-section {
+  padding: 8rem 10%;
+  position: relative;
+}
+
+.challenge-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255, 107, 0, 0.1);
+  border-radius: 20px;
+  color: var(--pmi-orange);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: var(--pmi-white);
+}
+
+.highlight-blue {
+  color: var(--pmi-blue);
+  text-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.feature-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card:nth-child(1):hover { border-color: var(--pmi-blue); box-shadow: 0 10px 30px rgba(0, 209, 255, 0.15); }
+.feature-card:nth-child(2):hover { border-color: var(--pmi-purple); box-shadow: 0 10px 30px rgba(138, 43, 226, 0.15); }
+.feature-card:nth-child(3):hover { border-color: var(--pmi-orange); box-shadow: 0 10px 30px rgba(255, 107, 0, 0.15); }
+
+.feature-card:hover::before {
+  transform: translateX(100%);
+}
+
+.feature-number {
+  font-size: 0.9rem;
+  font-weight: 800;
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--pmi-white);
+  letter-spacing: 0.5px;
+}
+
+.feature-description {
+  color: #888;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1100px) {
+  .section-title { font-size: 2.5rem; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .challenge-section { padding: 4rem 5%; }
+  .features-grid { grid-template-columns: 1fr; }
+  .section-title { font-size: 2rem; }
+}
