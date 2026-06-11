@@ -14,7 +14,7 @@ const Hero = () => {
       </div>
 
       <div className="hero-content">
-        <div className="badge">12 A 14 DE JUNHO • BRASÍLIA</div>
+        <div className="badge">11 E 12 DE SETEMBRO • BRASÍLIA</div>
         <div className="title-wrapper">
           <h1 className="main-title glitch" data-text={fullTitle}>
             TRANSFORME O FUTURO DA GESTÃO PÚBLICA
@@ -26,7 +26,7 @@ const Hero = () => {
         </p>
         <div className="hero-actions">
           <button className="btn btn-primary">INSCREVER MINHA EQUIPE</button>
-          <button className="btn btn-secondary">CONHECER DESAFIOS</button>
+          <button className="btn btn-secondary">ACESSAR EDITAL</button>
         </div>
       </div>
       

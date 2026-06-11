@@ -6,8 +6,14 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Image src="/assets/7_PMI.svg" alt="PMI Logo" width={40} height={40} className="logo-img" />
-        HACKATHON<span>DF</span>
+        <Image 
+          src="/assets/logo-full.svg" 
+          alt="Hackathon DF Logo" 
+          width={220} 
+          height={60} 
+          className="full-logo-img" 
+          priority
+        />
       </div>
       <ul className="navbar-links">
         <li><a href="#about">O EVENTO</a></li>
