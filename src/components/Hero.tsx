@@ -3,6 +3,8 @@ import './Hero.css';
 import Image from 'next/image';
 
 const Hero = () => {
+  const fullTitle = "TRANSFORME O FUTURO DA GESTÃO PÚBLICA";
+  
   return (
     <section className="hero">
       <div className="hero-background-elements">
@@ -13,9 +15,11 @@ const Hero = () => {
 
       <div className="hero-content">
         <div className="badge">12 A 14 DE JUNHO • BRASÍLIA</div>
-        <h1 className="main-title">
-          TRANSFORME O <span className="highlight">FUTURO</span> DA GESTÃO PÚBLICA
-        </h1>
+        <div className="title-wrapper">
+          <h1 className="main-title glitch" data-text={fullTitle}>
+            TRANSFORME O FUTURO DA GESTÃO PÚBLICA
+          </h1>
+        </div>
         <p className="hero-subtitle">
           O HACKATHON PMI-DF 2026 reúne mentes brilhantes para solucionar 
           desafios reais da nossa capital através da tecnologia e inovação.

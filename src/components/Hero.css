@@ -60,18 +60,68 @@
   letter-spacing: 1px;
 }
 
-.main-title {
-  font-size: 4.5rem;
+.title-wrapper {
+  position: relative;
   margin-bottom: 1.5rem;
-  line-height: 1;
-  color: var(--pmi-white);
-  font-weight: 900;
 }
 
-.highlight {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--pmi-orange);
-  text-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+.main-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  color: var(--pmi-white);
+  font-weight: 900;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Original Glitch Style - Subtle and constant */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: block;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--pmi-purple);
+  animation: glitch-anim-1 10s infinite linear alternate-reverse;
+  z-index: -1;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--pmi-orange);
+  animation: glitch-anim-2 12s infinite linear alternate-reverse;
+  z-index: -2;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(30% 0 60% 0); }
+  20% { clip-path: inset(10% 0 85% 0); }
+  40% { clip-path: inset(55% 0 40% 0); }
+  60% { clip-path: inset(80% 0 10% 0); }
+  80% { clip-path: inset(20% 0 75% 0); }
+  100% { clip-path: inset(45% 0 50% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(60% 0 30% 0); }
+  20% { clip-path: inset(85% 0 10% 0); }
+  40% { clip-path: inset(40% 0 55% 0); }
+  60% { clip-path: inset(10% 0 80% 0); }
+  80% { clip-path: inset(75% 0 20% 0); }
+  100% { clip-path: inset(50% 0 45% 0); }
 }
 
 .hero-subtitle {
