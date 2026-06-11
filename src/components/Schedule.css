@@ -1,0 +1,188 @@
+.schedule-section {
+  padding: 8rem 10%;
+  background: linear-gradient(to bottom, transparent, rgba(255, 107, 0, 0.03), transparent);
+}
+
+.schedule-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.highlight-purple {
+  color: var(--pmi-purple);
+  text-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+/* Day Switcher */
+.day-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.day-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  min-width: 160px;
+}
+
+.day-num {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 0.3rem;
+}
+
+.day-date {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.day-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--pmi-white);
+}
+
+.day-btn.active {
+  background: rgba(138, 43, 226, 0.1);
+  border-color: var(--pmi-purple);
+  color: var(--pmi-white);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.2);
+}
+
+.day-btn.active:nth-child(1) {
+  border-color: var(--pmi-orange);
+  background: rgba(255, 107, 0, 0.1);
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.2);
+}
+
+/* Timeline */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-axis {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    var(--pmi-purple) 15%, 
+    var(--pmi-orange) 50%, 
+    var(--pmi-purple) 85%, 
+    transparent
+  );
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  margin-bottom: 4rem;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-item.right {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50%;
+}
+
+.timeline-node {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: var(--background);
+  border: 2px solid var(--pmi-purple);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow: 0 0 10px var(--pmi-purple);
+}
+
+.timeline-item.left .timeline-node { border-color: var(--pmi-orange); box-shadow: 0 0 10px var(--pmi-orange); }
+
+.schedule-card {
+  width: 90%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.4s ease;
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.timeline-item.left .schedule-card { margin-right: 40px; }
+.timeline-item.right .schedule-card { margin-left: 40px; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.schedule-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.timeline-item.left .schedule-card:hover { border-color: var(--pmi-orange); box-shadow: 0 0 30px rgba(255, 107, 0, 0.15); }
+.timeline-item.right .schedule-card:hover { border-color: var(--pmi-purple); box-shadow: 0 0 30px rgba(138, 43, 226, 0.15); }
+
+.schedule-time {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--pmi-blue);
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.schedule-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  color: var(--pmi-white);
+}
+
+.schedule-desc {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .schedule-section { padding: 4rem 5%; }
+}
+
+@media (max-width: 768px) {
+  .timeline-axis { left: 20px; transform: none; }
+  .timeline-item { padding-left: 50px; padding-right: 0; justify-content: flex-start; margin-bottom: 3rem; }
+  .timeline-item.right { padding-left: 50px; }
+  .timeline-node { left: 20px; transform: translateX(-50%); }
+  .timeline-item.left .schedule-card, .timeline-item.right .schedule-card { margin-left: 0; margin-right: 0; width: 100%; }
+  .day-switcher { gap: 1rem; }
+  .day-btn { min-width: 120px; padding: 0.8rem 1.5rem; }
+}
