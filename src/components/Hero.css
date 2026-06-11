@@ -101,7 +101,7 @@
 
 .glitch::after {
   left: -2px;
-  text-shadow: -2px 0 var(--pmi-orange);
+  text-shadow: -3px 0 var(--pmi-orange);
   animation: glitch-anim-2 12s infinite linear alternate-reverse;
   z-index: -2;
 }
@@ -169,6 +169,7 @@
   border-color: var(--pmi-white);
 }
 
+/* HYPNOTIC VISUAL REDESIGN */
 .hero-visual {
   flex: 1;
   display: flex;
@@ -176,44 +177,56 @@
   z-index: 1;
 }
 
-.visual-container {
+.hypnotic-logo-container {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.decoration-svg {
+.logo-glow-ring {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.2;
-  animation: pulse 4s infinite alternate ease-in-out;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
+  border: 1px solid rgba(255, 107, 0, 0.1);
+  animation: pulse-ring 8s infinite ease-in-out;
 }
 
-.pmi-branding {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.pmi-hypnotic-logo {
+  filter: drop-shadow(0 0 30px rgba(255, 107, 0, 0.2));
+  animation: hypnotic-float 12s infinite ease-in-out;
+  z-index: 2;
 }
 
-.pmi-floating {
-  filter: drop-shadow(0 0 30px rgba(255, 107, 0, 0.3));
-  animation: float 6s infinite ease-in-out;
+@keyframes hypnotic-float {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg) scale(1); 
+    filter: drop-shadow(0 0 30px rgba(255, 107, 0, 0.2));
+  }
+  33% { 
+    transform: translateY(-20px) rotate(2deg) scale(1.02); 
+    filter: drop-shadow(0 0 50px rgba(138, 43, 226, 0.3));
+  }
+  66% { 
+    transform: translateY(10px) rotate(-2deg) scale(0.98); 
+    filter: drop-shadow(0 0 40px rgba(255, 107, 0, 0.3));
+  }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-30px) rotate(5deg); }
-}
-
-@keyframes pulse {
-  from { transform: scale(0.95); opacity: 0.1; }
-  to { transform: scale(1.05); opacity: 0.3; }
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.3; border-color: rgba(255, 107, 0, 0.1); }
+  50% { transform: scale(1.2); opacity: 0.1; border-color: rgba(138, 43, 226, 0.2); }
 }
 
 @media (max-width: 1200px) {
   .main-title { font-size: 3.5rem; }
+  .hypnotic-logo-container { width: 350px; height: 350px; }
+  .pmi-hypnotic-logo { width: 250px; height: 250px; }
+  .logo-glow-ring { width: 280px; height: 280px; }
 }
 
 @media (max-width: 1024px) {
@@ -227,10 +240,7 @@
   .hero-content { margin: 0 auto; }
   .hero-actions { justify-content: center; }
   .hero-visual {
-    margin-top: 5rem;
+    margin-top: 3rem;
     justify-content: center;
   }
-  .visual-container { width: 300px; height: 300px; }
-  .decoration-svg { width: 300px; height: 300px; }
-  .pmi-floating { width: 120px; height: 120px; }
 }

@@ -31,11 +31,16 @@ const Hero = () => {
       </div>
       
       <div className="hero-visual">
-        <div className="visual-container">
-          <Image src="/assets/8_Colchetes.svg" alt="Decoration" width={500} height={500} className="decoration-svg" />
-          <div className="pmi-branding">
-            <Image src="/assets/7_PMI.svg" alt="PMI Large" width={200} height={200} className="pmi-floating" />
-          </div>
+        <div className="hypnotic-logo-container">
+          <div className="logo-glow-ring"></div>
+          <Image 
+            src="/assets/7_PMI.svg" 
+            alt="PMI Logo" 
+            width={320} 
+            height={320} 
+            className="pmi-hypnotic-logo" 
+            priority
+          />
         </div>
       </div>
     </section>
