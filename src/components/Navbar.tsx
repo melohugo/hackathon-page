@@ -18,6 +18,7 @@ const Navbar = () => {
       <ul className="navbar-links">
         <li><a href="#about">O EVENTO</a></li>
         <li><a href="#challenges">DESAFIOS</a></li>
+        <li><a href="#prizes">PRÊMIOS</a></li>
         <li><a href="#register" className="nav-cta">QUERO PARTICIPAR</a></li>
       </ul>
     </nav>
