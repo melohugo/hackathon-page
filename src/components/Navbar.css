@@ -42,7 +42,7 @@
   color: var(--pmi-orange);
 }
 
-.nav-cta {
+.nav-cta-btn {
   border: 1px solid var(--pmi-purple);
   padding: 0.6rem 1.4rem;
   border-radius: 4px;
@@ -50,9 +50,14 @@
   color: var(--pmi-white) !important;
   font-weight: 700 !important;
   transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.nav-cta:hover {
+.nav-cta-btn:hover {
   background: var(--pmi-purple);
   box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
 }

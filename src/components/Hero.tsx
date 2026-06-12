@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import './Hero.css';
 import Image from 'next/image';
@@ -25,8 +27,18 @@ const Hero = () => {
           desafios reais da nossa capital através da tecnologia e inovação.
         </p>
         <div className="hero-actions">
-          <button className="btn btn-primary">INSCREVER MINHA EQUIPE</button>
-          <button className="btn btn-secondary">ACESSAR EDITAL</button>
+          <button 
+            className="btn btn-primary" 
+            onClick={() => alert('O sistema de inscrições será liberado em breve. Fique atento!')}
+          >
+            INSCREVER MINHA EQUIPE
+          </button>
+          <button 
+            className="btn btn-secondary"
+            onClick={() => alert('O edital está sendo processado e será publicado em breve.')}
+          >
+            ACESSAR EDITAL
+          </button>
         </div>
       </div>
       

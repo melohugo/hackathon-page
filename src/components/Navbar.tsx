@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import './Navbar.css';
 import Image from 'next/image';
@@ -20,7 +22,14 @@ const Navbar = () => {
         <li><a href="#prizes">PRÊMIOS</a></li>
         <li><a href="#sponsors">PARCEIROS</a></li>
         <li><a href="#venue">LOCAL</a></li>
-        <li><a href="#register" className="nav-cta">QUERO PARTICIPAR</a></li>
+        <li>
+          <button 
+            onClick={() => alert('O sistema de inscrições será liberado em breve. Fique atento!')} 
+            className="nav-cta-btn"
+          >
+            QUERO PARTICIPAR
+          </button>
+        </li>
       </ul>
     </nav>
   );
