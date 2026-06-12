@@ -4,6 +4,7 @@ import Countdown from '@/components/Countdown';
 import Challenge from '@/components/Challenge';
 import Prizes from '@/components/Prizes';
 import Schedule from '@/components/Schedule';
+import Venue from '@/components/Venue';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Challenge />
       <Prizes />
       <Schedule />
+      <Venue />
     </main>
   );
 }
