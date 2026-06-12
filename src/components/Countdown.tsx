@@ -12,15 +12,16 @@ const Countdown = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('September 11, 2026 08:00:00').getTime();
+    // September is index 8 (0-indexed)
+    const targetDate = new Date(2026, 8, 11, 8, 0, 0).getTime();
 
-    const timer = setInterval(() => {
+    const calculateTimeLeft = () => {
       const now = new Date().getTime();
       const distance = targetDate - now;
 
       if (distance < 0) {
-        clearInterval(timer);
-        return;
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return false;
       }
 
       setTimeLeft({
@@ -29,6 +30,17 @@ const Countdown = () => {
         minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
         seconds: Math.floor((distance % (1000 * 60)) / 1000)
       });
+      return true;
+    };
+
+    // Calculate immediately
+    calculateTimeLeft();
+
+    const timer = setInterval(() => {
+      const isRunning = calculateTimeLeft();
+      if (!isRunning) {
+        clearInterval(timer);
+      }
     }, 1000);
 
     return () => clearInterval(timer);

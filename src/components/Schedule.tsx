@@ -38,6 +38,7 @@ const Schedule = () => {
 
       <div className="day-switcher">
         <button 
+          type="button"
           className={`day-btn ${activeDay === 1 ? 'active' : ''}`}
           onClick={() => setActiveDay(1)}
         >
@@ -45,6 +46,7 @@ const Schedule = () => {
           <span className="day-date">11 SET</span>
         </button>
         <button 
+          type="button"
           className={`day-btn ${activeDay === 2 ? 'active' : ''}`}
           onClick={() => setActiveDay(2)}
         >
@@ -56,7 +58,7 @@ const Schedule = () => {
       <div className="timeline-container">
         <div className="timeline-axis"></div>
         {currentSchedule.map((item, index) => (
-          <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+          <div key={`${activeDay}-${index}`} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
             <div className="timeline-node"></div>
             <div className="schedule-card">
               <div className="schedule-time">{item.time}</div>
