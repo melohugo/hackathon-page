@@ -13,8 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HACKATHON // FUTURE_CODE",
-  description: "Innovative Hackathon Landing Page - Cyberpunk Edition",
+  title: "Hackathon PMI-DF 2026",
+  description: "Hackathon oficial do Student Club PMI-DF - Inovação e Gerenciamento de Projetos em Brasília.",
+  icons: {
+    icon: "/assets/7_PMI.svg",
+    shortcut: "/assets/7_PMI.svg",
+    apple: "/assets/7_PMI.svg",
+  },
 };
 
 export default function RootLayout({
