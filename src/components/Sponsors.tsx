@@ -11,6 +11,7 @@ const Sponsors = () => {
 
   const partners = [
     { name: 'Red Bull', logo: '/assets/sponsors/redbull.png' },
+    { name: 'Vox2You', logo: '/assets/sponsors/vox2you.png', customScale: 1.8 },
     { name: 'Petricor', logo: '/assets/sponsors/petricor.png' },
     { name: 'Happy Harry', logo: '/assets/sponsors/happy_harry.png' }
   ];
@@ -55,6 +56,10 @@ const Sponsors = () => {
                   width={150} 
                   height={60} 
                   className="sponsor-logo"
+                  style={partner.customScale ? { 
+                    transform: `scale(${partner.customScale})`,
+                    filter: partner.name === 'Vox2You' ? 'brightness(1.5) contrast(1.2)' : 'brightness(1.1) contrast(1.1)'
+                  } : {}}
                 />
               </div>
             </div>
