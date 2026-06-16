@@ -5,7 +5,7 @@ import './Hero.css';
 import Image from 'next/image';
 
 const Hero = () => {
-  const fullTitle = "TRANSFORME O FUTURO DA GESTÃO PÚBLICA";
+  const fullTitle = "TRANSFORME O FUTURO DA NOSSA CAPITAL";
   const [showSedes, setShowSedes] = useState(false);
   const [isGlitching, setIsGlitching] = useState(false);
 
@@ -37,7 +37,7 @@ const Hero = () => {
         <div className="badge">11 E 12 DE SETEMBRO • BRASÍLIA</div>
         <div className="title-wrapper">
           <h1 className="main-title glitch" data-text={fullTitle}>
-            TRANSFORME O FUTURO DA GESTÃO PÚBLICA
+            {fullTitle}
           </h1>
         </div>
         <p className="hero-subtitle">
