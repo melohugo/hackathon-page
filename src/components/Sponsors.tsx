@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Sponsors = () => {
   const mainSponsor = {
     name: 'SEDES',
-    logo: '/assets/sponsors/sedes.png',
+    logo: '/assets/sponsors/sedes-new.png',
     size: 'large'
   };
 

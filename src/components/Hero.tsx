@@ -1,11 +1,29 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import Image from 'next/image';
 
 const Hero = () => {
   const fullTitle = "TRANSFORME O FUTURO DA GESTÃO PÚBLICA";
+  const [showSedes, setShowSedes] = useState(false);
+  const [isGlitching, setIsGlitching] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsGlitching(true);
+      
+      // Glitch starts, then swap, then glitch ends
+      setTimeout(() => {
+        setShowSedes(prev => !prev);
+      }, 150);
+
+      setTimeout(() => {
+        setIsGlitching(false);
+      }, 400);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
   
   return (
     <section className="hero">
@@ -45,14 +63,24 @@ const Hero = () => {
       <div className="hero-visual">
         <div className="hypnotic-logo-container">
           <div className="logo-glow-ring"></div>
-          <Image 
-            src="/assets/7_PMI.svg" 
-            alt="PMI Logo" 
-            width={320} 
-            height={320} 
-            className="pmi-hypnotic-logo" 
-            priority
-          />
+          <div className={`logo-transition-wrapper ${showSedes ? 'show-sedes' : 'show-pmi'} ${isGlitching ? 'glitching' : ''}`}>
+            <Image 
+              src="/assets/7_PMI.svg" 
+              alt="PMI Logo" 
+              width={320} 
+              height={320} 
+              className="pmi-hypnotic-logo logo-main" 
+              priority
+            />
+            <Image 
+              src="/assets/sponsors/sedes-new.png" 
+              alt="SEDES Logo" 
+              width={320} 
+              height={320} 
+              className="sedes-hypnotic-logo logo-alt" 
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>

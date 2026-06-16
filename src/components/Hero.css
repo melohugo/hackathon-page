@@ -196,10 +196,67 @@
   animation: pulse-ring 8s infinite ease-in-out;
 }
 
-.pmi-hypnotic-logo {
+.pmi-hypnotic-logo, .sedes-hypnotic-logo {
   filter: drop-shadow(0 0 30px rgba(255, 107, 0, 0.2));
   animation: hypnotic-float 12s infinite ease-in-out;
   z-index: 2;
+  object-fit: contain;
+}
+
+.logo-transition-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-main, .logo-alt {
+  position: absolute;
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.show-pmi .logo-main {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  filter: drop-shadow(0 0 30px rgba(255, 107, 0, 0.4));
+  visibility: visible;
+}
+
+.show-pmi .logo-alt {
+  opacity: 0;
+  transform: scale(0.9) rotate(-10deg);
+  filter: blur(20px) grayscale(1);
+  visibility: hidden;
+}
+
+.show-sedes .logo-main {
+  opacity: 0;
+  transform: scale(0.8) rotate(10deg);
+  filter: blur(20px) grayscale(1);
+  visibility: hidden;
+}
+
+.show-sedes .logo-alt {
+  opacity: 1;
+  transform: scale(1.15) rotate(0deg);
+  filter: drop-shadow(0 0 30px rgba(138, 43, 226, 0.4));
+  visibility: visible;
+}
+
+/* Glitch trigger - intense flicker when swapping */
+@keyframes logo-swap-flicker {
+  0% { opacity: 1; filter: contrast(1) brightness(1); transform: translate(0, 0); }
+  20% { opacity: 0.8; filter: contrast(1.2) brightness(1.2) drop-shadow(2px 0 red); transform: translate(-2px, 0); }
+  40% { opacity: 1; filter: contrast(1.5) brightness(1.5) drop-shadow(-2px 0 cyan); transform: translate(2px, 0); }
+  60% { opacity: 0.9; filter: contrast(1.2) brightness(1.2) drop-shadow(2px 2px purple); transform: translate(-1px, 1px); }
+  80% { opacity: 1; filter: contrast(1.1) brightness(1.1); transform: translate(1px, -1px); }
+  100% { opacity: 1; filter: contrast(1) brightness(1); transform: translate(0, 0); }
+}
+
+.logo-transition-wrapper.glitching {
+  animation: logo-swap-flicker 0.4s ease-out forwards;
 }
 
 @keyframes hypnotic-float {
