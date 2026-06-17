@@ -41,7 +41,7 @@ const Hero = () => {
           </h1>
         </div>
         <p className="hero-subtitle">
-          O HACKATHON PMI-DF 2026 reúne mentes brilhantes para solucionar 
+          O HACKATHON PMI-DF & SEDES 2026 reúne mentes brilhantes para solucionar 
           desafios reais da nossa capital através da tecnologia e inovação.
         </p>
         <div className="hero-actions">
