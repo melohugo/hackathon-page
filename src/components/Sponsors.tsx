@@ -81,6 +81,18 @@ const Sponsors = () => {
             </div>
           ))}
         </div>
+
+        {/* Call to Action */}
+        <div className="sponsors-cta">
+          <a 
+            href="mailto:hackathon@pmidf.org?subject=Interesse%20em%20Patroc%C3%ADnio%20-%20Hackathon%20PMI-DF%202026"
+            className="btn-cyberpunk"
+          >
+            QUERO PATROCINAR O EVENTO
+            <span className="cyber-tag">SPONSOR.EXE //</span>
+            <span className="cyber-corner-decor"></span>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -147,8 +147,107 @@
 .top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
 .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 
+/* CYBERPUNK CTA BUTTON */
+.sponsors-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.btn-cyberpunk {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: transparent;
+  color: var(--pmi-white);
+  border: 2px solid var(--pmi-orange);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  padding: 1.25rem 3rem;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  overflow: visible;
+  transition: all 0.3s ease;
+  clip-path: polygon(0 0, 92% 0, 100% 30%, 100% 100%, 8% 100%, 0 70%);
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.2);
+}
+
+.btn-cyberpunk::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--pmi-orange);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-cyberpunk:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-cyberpunk:hover {
+  color: #000;
+  border-color: var(--pmi-orange);
+  box-shadow: 0 0 25px var(--pmi-orange), inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.cyber-tag {
+  position: absolute;
+  bottom: -2px;
+  right: 20px;
+  font-size: 0.6rem;
+  color: var(--pmi-orange);
+  background: var(--background);
+  padding: 0 5px;
+  letter-spacing: 1px;
+  border: 1px solid var(--pmi-orange);
+  border-bottom: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-cyberpunk:hover .cyber-tag {
+  background: var(--pmi-white);
+  color: #000;
+  border-color: var(--pmi-white);
+}
+
+.cyber-corner-decor {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 6px;
+  height: 6px;
+  background: var(--pmi-blue);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-cyberpunk:hover .cyber-corner-decor {
+  background: #000;
+}
+
 /* RESPONSIVENESS */
 @media (max-width: 768px) {
+  .btn-cyberpunk {
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    letter-spacing: 2px;
+  }
+
   .sponsor-card.large {
     width: 100%;
     max-width: 350px;
