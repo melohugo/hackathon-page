@@ -282,7 +282,7 @@
 @media (max-width: 1200px) {
   .main-title { font-size: 3.5rem; }
   .hypnotic-logo-container { width: 350px; height: 350px; }
-  .pmi-hypnotic-logo { width: 250px; height: 250px; }
+  .pmi-hypnotic-logo, .sedes-hypnotic-logo { width: 250px; height: 250px; }
   .logo-glow-ring { width: 280px; height: 280px; }
 }
 
