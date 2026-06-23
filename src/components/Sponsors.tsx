@@ -3,11 +3,22 @@ import './Sponsors.css';
 import Image from 'next/image';
 
 const Sponsors = () => {
-  const mainSponsor = {
-    name: 'SEDES',
-    logo: '/assets/sponsors/sedes-new.png',
-    size: 'large'
-  };
+  const organizers = [
+    { 
+      name: 'PMI-DF', 
+      logo: '/assets/7_PMI.svg',
+      width: 180,
+      height: 180,
+      customScale: 1.15
+    },
+    { 
+      name: 'SEDES', 
+      logo: '/assets/sponsors/sedes-new.png',
+      width: 250,
+      height: 100,
+      customScale: 0.9
+    }
+  ];
 
   const partners = [
     { name: 'Red Bull', logo: '/assets/sponsors/redbull.png' },
@@ -24,27 +35,32 @@ const Sponsors = () => {
       </div>
 
       <div className="sponsors-container">
-        {/* Main Sponsor - Large */}
-        <div className="tier-label">APOIO INSTITUCIONAL</div>
-        <div className="main-sponsor-wrapper">
-          <div className="sponsor-card large floating">
-            <div className="card-border-glow"></div>
-            <div className="sponsor-card-inner">
-              <Image 
-                src={mainSponsor.logo} 
-                alt={mainSponsor.name} 
-                width={300} 
-                height={120} 
-                className="sponsor-logo"
-              />
+        {/* Realização */}
+        <div className="tier-label">REALIZAÇÃO</div>
+        <div className="realization-grid">
+          {organizers.map((org, index) => (
+            <div key={index} className="sponsor-card large floating" style={{ animationDelay: `${index * 0.5}s` }}>
+              <div className="card-border-glow"></div>
+              <div className="sponsor-card-inner">
+                <Image 
+                  src={org.logo} 
+                  alt={org.name} 
+                  width={org.width} 
+                  height={org.height} 
+                  className="sponsor-logo"
+                  style={org.customScale ? { 
+                    transform: `scale(${org.customScale})` 
+                  } : {}}
+                />
+              </div>
+              <div className="tech-corner top-left"></div>
+              <div className="tech-corner bottom-right"></div>
             </div>
-            <div className="tech-corner top-left"></div>
-            <div className="tech-corner bottom-right"></div>
-          </div>
+          ))}
         </div>
 
         {/* Partners - Small */}
-        <div className="tier-label">PARCEIROS ESTRATÉGICOS</div>
+        <div className="tier-label">PATROCINADORES E PARCEIROS</div>
         <div className="partners-grid">
           {partners.map((partner, index) => (
             <div key={index} className="sponsor-card small floating" style={{ animationDelay: `${index * 0.5}s` }}>

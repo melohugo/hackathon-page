@@ -80,6 +80,19 @@
   gap: 2rem;
 }
 
+.realization-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 80px;
+}
+
+.realization-grid .sponsor-card.large {
+  margin: 0;
+}
+
+
 .sponsor-card.small {
   width: 220px;
   height: 120px;
@@ -140,6 +153,11 @@
     width: 100%;
     max-width: 350px;
     height: 160px;
+  }
+  
+  .realization-grid {
+    gap: 1.5rem;
+    margin-bottom: 40px;
   }
   
   .sponsor-card.small {
