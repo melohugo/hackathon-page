@@ -196,7 +196,7 @@
   animation: pulse-ring 8s infinite ease-in-out;
 }
 
-.pmi-hypnotic-logo, .sedes-hypnotic-logo {
+.pmi-hypnotic-logo, .capital-hypnotic-logo {
   filter: drop-shadow(0 0 30px rgba(255, 107, 0, 0.2));
   animation: hypnotic-float 12s infinite ease-in-out;
   z-index: 2;
@@ -231,14 +231,14 @@
   visibility: hidden;
 }
 
-.show-sedes .logo-main {
+.show-capital .logo-main {
   opacity: 0;
   transform: scale(0.8) rotate(10deg);
   filter: blur(20px) grayscale(1);
   visibility: hidden;
 }
 
-.show-sedes .logo-alt {
+.show-capital .logo-alt {
   opacity: 1;
   transform: scale(1.15) rotate(0deg);
   filter: drop-shadow(0 0 30px rgba(138, 43, 226, 0.4));
@@ -282,7 +282,7 @@
 @media (max-width: 1200px) {
   .main-title { font-size: 3.5rem; }
   .hypnotic-logo-container { width: 350px; height: 350px; }
-  .pmi-hypnotic-logo, .sedes-hypnotic-logo { width: 250px; height: 250px; }
+  .pmi-hypnotic-logo, .capital-hypnotic-logo { width: 250px; height: 250px; }
   .logo-glow-ring { width: 280px; height: 280px; }
 }
 

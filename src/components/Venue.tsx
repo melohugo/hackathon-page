@@ -18,8 +18,8 @@ const Venue = () => {
             </div>
             <div className="terminal-content">
               <div className="location-data">
-                <span className="label">ALVO:</span>
-                <span className="value">SEDES - SECRETARIA DE DESENVOLVIMENTO SOCIAL</span>
+                <span className="label">LOCAL:</span>
+                <span className="value">AUDITÓRIO SEPN 515 - ASA NORTE</span>
               </div>
               <div className="location-data">
                 <span className="label">COORDENADAS:</span>
@@ -37,7 +37,7 @@ const Venue = () => {
           </div>
 
           <a 
-            href="https://www.google.com/maps/search/?api=1&query=SEPN+515+Bloco+A+SEDES+Brasilia" 
+            href="https://www.google.com/maps/search/?api=1&query=SEPN+515+Bloco+A+Brasilia" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-route"

@@ -14,7 +14,7 @@ const Schedule = () => {
 
   const day1: ScheduleItem[] = [
     { time: '19:00', title: 'Check-in, Credenciamento e Coffee Break', description: 'Recepção dos participantes, entrega de kits e lanche de boas-vindas.' },
-    { time: '19:30', title: 'Abertura Oficial e Apresentação do Desafio', description: 'Boas-vindas, introdução ao Hackathon e detalhamento do problema real proposto pela SEDES.' },
+    { time: '19:30', title: 'Abertura Oficial e Apresentação do Desafio', description: 'Boas-vindas, introdução ao Hackathon e detalhamento do problema real proposto para a nossa capital.' },
     { time: '20:30', title: 'Networking & Mentores', description: 'Momento para formação de conexões e conversa com especialistas.' }
   ];
 

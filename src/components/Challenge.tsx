@@ -6,7 +6,7 @@ const Challenge = () => {
     {
       id: '01',
       title: 'Problema real',
-      description: 'Desafios trazidos diretamente do setor público do DF, com foco em soluções para a SEDES.',
+      description: 'Desafios trazidos diretamente do setor público do DF, com foco em soluções de impacto e desenvolvimento social.',
       color: 'var(--pmi-blue)'
     },
     {

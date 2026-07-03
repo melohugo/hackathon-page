@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   const fullTitle = "TRANSFORME O FUTURO DA NOSSA CAPITAL";
-  const [showSedes, setShowSedes] = useState(false);
+  const [showCapital, setShowCapital] = useState(false);
   const [isGlitching, setIsGlitching] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Hero = () => {
       
       // Glitch starts, then swap, then glitch ends
       setTimeout(() => {
-        setShowSedes(prev => !prev);
+        setShowCapital(prev => !prev);
       }, 150);
 
       setTimeout(() => {
@@ -41,7 +41,7 @@ const Hero = () => {
           </h1>
         </div>
         <p className="hero-subtitle">
-          O HACKATHON PMI-DF & SEDES 2026 reúne mentes brilhantes para solucionar 
+          O HACKATHON PMI-DF 2026 reúne mentes brilhantes para solucionar 
           desafios reais da nossa capital através da tecnologia e inovação.
         </p>
         <div className="hero-actions">
@@ -63,7 +63,7 @@ const Hero = () => {
       <div className="hero-visual">
         <div className="hypnotic-logo-container">
           <div className="logo-glow-ring"></div>
-          <div className={`logo-transition-wrapper ${showSedes ? 'show-sedes' : 'show-pmi'} ${isGlitching ? 'glitching' : ''}`}>
+          <div className={`logo-transition-wrapper ${showCapital ? 'show-capital' : 'show-pmi'} ${isGlitching ? 'glitching' : ''}`}>
             <Image 
               src="/assets/7_PMI.svg" 
               alt="PMI Logo" 
@@ -73,11 +73,11 @@ const Hero = () => {
               priority
             />
             <Image 
-              src="/assets/sponsors/sedes-new.png" 
-              alt="SEDES Logo" 
+              src="/assets/6_Brasília.svg" 
+              alt="Catedral de Brasília" 
               width={320} 
               height={320} 
-              className="sedes-hypnotic-logo logo-alt" 
+              className="capital-hypnotic-logo logo-alt" 
               priority
             />
           </div>

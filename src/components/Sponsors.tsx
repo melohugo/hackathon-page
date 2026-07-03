@@ -10,13 +10,6 @@ const Sponsors = () => {
       width: 180,
       height: 180,
       customScale: 1.15
-    },
-    { 
-      name: 'SEDES', 
-      logo: '/assets/sponsors/sedes-new.png',
-      width: 250,
-      height: 100,
-      customScale: 0.9
     }
   ];
 

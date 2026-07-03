@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hackathon PMI-DF & SEDES 2026",
+  title: "Hackathon PMI-DF 2026",
   description: "Hackathon oficial do Student Club PMI-DF - Inovação e Gerenciamento de Projetos em Brasília.",
   icons: {
     icon: "/assets/7_PMI.svg",
