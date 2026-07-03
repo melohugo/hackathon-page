@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     shortcut: "/assets/7_PMI.svg",
     apple: "/assets/7_PMI.svg",
   },
+  verification: {
+    google: "6XXM6dXFdoNXt7dntU7f2v_5SrVIDe-czoKgL2N-ISQ",
+  },
 };
 
 export default function RootLayout({
