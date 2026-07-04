@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     siteName: "Hackathon PMI-DF 2026",
     images: [
       {
-        url: "https://hackathon.pmidf.org/assets/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "https://hackathon.pmidf.org/assets/3_Laranja-Roxa-8.png?v=1",
+        width: 2224,
+        height: 890,
         alt: "Hackathon PMI-DF 2026",
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hackathon PMI-DF 2026",
     description: "Inscreva sua equipe no maior evento de inovação e gerenciamento de projetos do Student Club PMI-DF em Brasília.",
-    images: ["https://hackathon.pmidf.org/assets/og-image.jpg"],
+    images: ["https://hackathon.pmidf.org/assets/3_Laranja-Roxa-8.png?v=1"],
   },
 };
 
@@ -73,7 +73,7 @@ export default function RootLayout({
       }
     },
     "image": [
-      "https://hackathon.pmidf.org/assets/og-image.jpg"
+      "https://hackathon.pmidf.org/assets/3_Laranja-Roxa-8.png?v=1"
     ],
     "description": "Hackathon oficial do Student Club PMI-DF - Inovação e Gerenciamento de Projetos em Brasília.",
     "organizer": {
