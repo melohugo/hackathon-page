@@ -138,6 +138,8 @@
 }
 
 .btn {
+  display: inline-block;
+  text-align: center;
   padding: 1.2rem 2.5rem;
   border: none;
   font-weight: 800;

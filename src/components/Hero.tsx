@@ -45,18 +45,22 @@ const Hero = () => {
           desafios reais da nossa capital através da tecnologia e inovação.
         </p>
         <div className="hero-actions">
-          <button 
-            className="btn btn-primary" 
-            onClick={() => alert('O sistema de inscrições será liberado em breve. Fique atento!')}
+          <a 
+            href="https://www.sympla.com.br/evento/hackathon-2026-student-club-pmi-df/3374613"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
           >
             INSCREVER MINHA EQUIPE
-          </button>
-          <button 
+          </a>
+          <a 
+            href="/Edital_01_2026_HackathonPMIDF.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-secondary"
-            onClick={() => alert('O edital está sendo processado e será publicado em breve.')}
           >
             ACESSAR EDITAL
-          </button>
+          </a>
         </div>
       </div>
       

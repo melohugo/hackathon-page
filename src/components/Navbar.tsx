@@ -23,12 +23,14 @@ const Navbar = () => {
         <li><a href="#sponsors">PARCEIROS</a></li>
         <li><a href="#venue">LOCAL</a></li>
         <li>
-          <button 
-            onClick={() => alert('O sistema de inscrições será liberado em breve. Fique atento!')} 
+          <a 
+            href="https://www.sympla.com.br/evento/hackathon-2026-student-club-pmi-df/3374613"
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-cta-btn"
           >
             QUERO PARTICIPAR
-          </button>
+          </a>
         </li>
       </ul>
     </nav>
