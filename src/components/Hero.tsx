@@ -54,7 +54,7 @@ const Hero = () => {
             INSCREVER MINHA EQUIPE
           </a>
           <a 
-            href="/Edital_01_2026_HackathonPMIDF.pdf"
+            href="/Edital_01_2026_HackathonPMIDF_VF_assinado_assinado_assinado.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-secondary"
