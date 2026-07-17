@@ -61,8 +61,8 @@ const Sponsors = () => {
                 <Image 
                   src={partner.logo} 
                   alt={partner.name} 
-                  width={partner.width || 150} 
-                  height={partner.height || 60} 
+                  width={150} 
+                  height={60} 
                   className="sponsor-logo"
                   style={partner.customScale ? { 
                     transform: `scale(${partner.customScale})`,
