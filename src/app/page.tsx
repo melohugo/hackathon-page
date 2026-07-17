@@ -5,7 +5,7 @@ import Challenge from '@/components/Challenge';
 import Prizes from '@/components/Prizes';
 import Schedule from '@/components/Schedule';
 import Sponsors from '@/components/Sponsors';
-import Venue from '@/components/Venue';
+// import Venue from '@/components/Venue';
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <Prizes />
       <Schedule />
       <Sponsors />
-      <Venue />
+      {/* <Venue /> */}
     </main>
   );
 }

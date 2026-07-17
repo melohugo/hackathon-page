@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><a href="#about">O EVENTO</a></li>
         <li><a href="#prizes">PRÊMIOS</a></li>
         <li><a href="#sponsors">PARCEIROS</a></li>
-        <li><a href="#venue">LOCAL</a></li>
+        {/* <li><a href="#venue">LOCAL</a></li> */}
         <li>
           <a 
             href="https://www.sympla.com.br/evento/hackathon-2026-student-club-pmi-df/3374613"
