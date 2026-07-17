@@ -46,8 +46,6 @@ const Sponsors = () => {
                   } : {}}
                 />
               </div>
-              <div className="tech-corner top-left"></div>
-              <div className="tech-corner bottom-right"></div>
             </div>
           ))}
         </div>
