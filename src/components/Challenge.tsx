@@ -6,7 +6,7 @@ const Challenge = () => {
     {
       id: '01',
       title: 'Problema real',
-      description: 'Desafios trazidos diretamente do setor público do DF, com foco em soluções de impacto e desenvolvimento social.',
+      description: 'Desafios reais e práticos do mercado, focando em soluções de alto impacto, inovação e viabilidade de implementação.',
       color: 'var(--pmi-blue)'
     },
     {
@@ -17,8 +17,8 @@ const Challenge = () => {
     },
     {
       id: '03',
-      title: 'Impacto público',
-      description: 'Soluções inovadoras que podem ser transformadas em políticas públicas reais para a capital.',
+      title: 'Impacto real',
+      description: 'Soluções viáveis e inovadoras prontas para serem aplicadas no mercado e gerar valor concreto no mundo real.',
       color: 'var(--pmi-orange)'
     }
   ];
@@ -28,12 +28,12 @@ const Challenge = () => {
       <div className="challenge-header">
         <div className="section-badge">✧ O DESAFIO</div>
         <h2 className="section-title">
-          Resolva um problema <span className="highlight-blue">real do setor público</span>
+          Resolva um problema <span className="highlight-blue">real de mercado</span>
         </h2>
         <p className="section-subtitle">
-          Você será desafiado a propor soluções para problemas que afetam o cotidiano 
-          dos serviços públicos do Distrito Federal. Gestão de projetos, tecnologia e 
-          impacto social caminham juntos neste Hackathon.
+          Você será desafiado a propor soluções para problemas reais e complexos do mercado 
+          e da sociedade. Gestão de projetos, tecnologia e impacto prático caminham 
+          juntos neste Hackathon.
         </p>
       </div>
 

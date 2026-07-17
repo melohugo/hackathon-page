@@ -5,7 +5,7 @@ import './Hero.css';
 import Image from 'next/image';
 
 const Hero = () => {
-  const fullTitle = "TRANSFORME O FUTURO DA NOSSA CAPITAL";
+  const fullTitle = "TRANSFORME O FUTURO COM IMPACTO REAL";
   const [showCapital, setShowCapital] = useState(false);
   const [isGlitching, setIsGlitching] = useState(false);
 
@@ -42,7 +42,7 @@ const Hero = () => {
         </div>
         <p className="hero-subtitle">
           O HACKATHON PMI-DF 2026 reúne mentes brilhantes para solucionar 
-          desafios reais da nossa capital através da tecnologia e inovação.
+          desafios reais e complexos do mercado através da tecnologia, inovação e gestão de projetos.
         </p>
         <div className="hero-actions">
           <a 
