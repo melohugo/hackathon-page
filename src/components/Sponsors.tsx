@@ -17,7 +17,8 @@ const Sponsors = () => {
     { name: 'Red Bull', logo: '/assets/sponsors/redbull.png' },
     { name: 'Vox2You', logo: '/assets/sponsors/vox2you.png', customScale: 1.8 },
     { name: 'Petricor', logo: '/assets/sponsors/petricor.png' },
-    { name: 'Happy Harry', logo: '/assets/sponsors/happy_harry.png' }
+    { name: 'Happy Harry', logo: '/assets/sponsors/happy_harry.png' },
+    { name: 'Matriz', logo: '/assets/sponsors/matriz_logo.png' }
   ];
 
   return (
@@ -60,8 +61,8 @@ const Sponsors = () => {
                 <Image 
                   src={partner.logo} 
                   alt={partner.name} 
-                  width={150} 
-                  height={60} 
+                  width={partner.width || 150} 
+                  height={partner.height || 60} 
                   className="sponsor-logo"
                   style={partner.customScale ? { 
                     transform: `scale(${partner.customScale})`,
