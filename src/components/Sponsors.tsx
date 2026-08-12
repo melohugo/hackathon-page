@@ -2,13 +2,38 @@ import React from 'react';
 import './Sponsors.css';
 import Image from 'next/image';
 
+interface SponsorItem {
+  name: string;
+  logo: string;
+  width: number;
+  height: number;
+  customScale?: number;
+}
+
 const Sponsors = () => {
-  const organizers = [
+  const organizers: SponsorItem[] = [
     { 
       name: 'PMI-DF', 
       logo: '/assets/7_PMI.svg',
       width: 180,
       height: 180,
+      customScale: 1.15
+    }
+  ];
+
+  const sponsors: SponsorItem[] = [
+    { 
+      name: 'IBM', 
+      logo: '/assets/sponsors/IBM.svg',
+      width: 320,
+      height: 128,
+      customScale: 1.15
+    },
+    { 
+      name: 'Krill Tech', 
+      logo: '/assets/sponsors/krilltech.png',
+      width: 250,
+      height: 159,
       customScale: 1.15
     }
   ];
@@ -51,8 +76,30 @@ const Sponsors = () => {
           ))}
         </div>
 
+        {/* Patrocinadores */}
+        <div className="tier-label">PATROCINADORES</div>
+        <div className="sponsors-grid">
+          {sponsors.map((sponsor, index) => (
+            <div key={index} className="sponsor-card large floating" style={{ animationDelay: `${index * 0.5}s` }}>
+              <div className="card-border-glow"></div>
+              <div className="sponsor-card-inner">
+                <Image 
+                  src={sponsor.logo} 
+                  alt={sponsor.name} 
+                  width={sponsor.width} 
+                  height={sponsor.height} 
+                  className="sponsor-logo"
+                  style={sponsor.customScale ? { 
+                    transform: `scale(${sponsor.customScale})` 
+                  } : {}}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Partners - Small */}
-        <div className="tier-label">PATROCINADORES E PARCEIROS</div>
+        <div className="tier-label">PARCEIROS</div>
         <div className="partners-grid">
           {partners.map((partner, index) => (
             <div key={index} className="sponsor-card small floating" style={{ animationDelay: `${index * 0.5}s` }}>

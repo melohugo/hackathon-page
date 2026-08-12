@@ -80,7 +80,8 @@
   gap: 2rem;
 }
 
-.realization-grid {
+.realization-grid,
+.sponsors-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -88,7 +89,8 @@
   margin-bottom: 80px;
 }
 
-.realization-grid .sponsor-card.large {
+.realization-grid .sponsor-card.large,
+.sponsors-grid .sponsor-card.large {
   margin: 0;
 }
 
@@ -254,7 +256,8 @@
     height: 160px;
   }
   
-  .realization-grid {
+  .realization-grid,
+  .sponsors-grid {
     gap: 1.5rem;
     margin-bottom: 40px;
   }
