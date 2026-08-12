@@ -25,16 +25,16 @@ const Sponsors = () => {
     { 
       name: 'IBM', 
       logo: '/assets/sponsors/IBM.svg',
-      width: 320,
-      height: 128,
-      customScale: 1.15
+      width: 280,
+      height: 112,
+      customScale: 0.95
     },
     { 
       name: 'Krill Tech', 
       logo: '/assets/sponsors/krilltech.png',
-      width: 250,
-      height: 159,
-      customScale: 1.15
+      width: 260,
+      height: 165,
+      customScale: 1.25
     }
   ];
 
