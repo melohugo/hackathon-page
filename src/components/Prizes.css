@@ -55,7 +55,7 @@
   background: rgba(15, 15, 15, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 40px 20px;
+  padding: 40px 24px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -66,22 +66,28 @@
 .prize-card-inner {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* DIFFERENT HEIGHTS FOR PODIUM */
 .rank-1st {
-  height: 450px;
+  min-height: 580px;
+  height: auto;
   border-color: var(--pmi-blue);
   box-shadow: 0 0 30px rgba(0, 209, 255, 0.1);
 }
 
 .rank-2nd {
-  height: 380px;
+  min-height: 520px;
+  height: auto;
   border-color: rgba(138, 43, 226, 0.3);
 }
 
 .rank-3rd {
-  height: 320px;
+  min-height: 480px;
+  height: auto;
   border-color: rgba(255, 107, 0, 0.3);
 }
 
@@ -106,60 +112,202 @@
   box-shadow: 0 0 40px rgba(255, 107, 0, 0.2);
 }
 
-/* LOCK ICON */
-.lock-icon-wrapper {
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+/* TROPHY CUSTOM STYLING */
+.trophy-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 1rem;
 }
 
-.prize-card:hover .lock-icon-wrapper {
-  color: var(--pmi-white);
-  transform: scale(1.1);
+.trophy-svg {
+  filter: drop-shadow(0 0 8px currentColor);
+  transition: transform 0.3s ease;
 }
 
-.rank-1st .lock-icon-wrapper { color: var(--pmi-blue); opacity: 0.6; }
+.prize-card:hover .trophy-svg {
+  transform: scale(1.1) rotate(3deg);
+}
 
-/* TEXT STYLES */
 .prize-position {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  color: #666;
-  margin-bottom: 1.5rem;
+  color: #aaa;
+  margin-bottom: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.rank-1st .prize-position { color: var(--pmi-white); }
+.rank-1st .prize-position {
+  color: var(--pmi-white);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
 
-.decoding-text {
-  font-size: 3.5rem;
-  font-weight: 900;
+/* PRIZE VALUE CONTAINER */
+.prize-amount-container {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-mono);
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 0.2rem;
 }
 
-.char {
-  animation: pulse-decode 2s infinite;
-  opacity: 0.3;
+.prize-value {
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
-.char:nth-child(2) { animation-delay: 0.3s; }
-.char:nth-child(3) { animation-delay: 0.6s; }
-
-@keyframes pulse-decode {
-  0%, 100% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.1); opacity: 0.5; color: var(--pmi-blue); }
+.prize-value.cash {
+  font-size: 2.2rem;
+  color: var(--pmi-blue);
+  text-shadow: 0 0 15px rgba(0, 209, 255, 0.3);
 }
 
-.prize-status {
-  font-size: 0.9rem;
-  letter-spacing: 4px;
+.prize-value.credits {
+  font-size: 2rem;
+  color: var(--pmi-white);
+}
+
+.prize-value.credits-only {
+  font-size: 2.3rem;
+  color: var(--pmi-white);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.prize-plus-sign {
+  font-size: 1.4rem;
+  font-weight: 900;
   color: rgba(255, 255, 255, 0.4);
-  font-weight: 300;
+  margin: 0.1rem 0;
+}
+
+.prize-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+.prize-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin: 1.2rem 0;
+  width: 100%;
+}
+
+/* BENEFITS LIST */
+.prize-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 0.85rem;
+  color: #ccc;
+  flex-grow: 1;
+}
+
+.prize-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.3;
+}
+
+.benefit-check {
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.prize-card:hover .benefit-check {
+  transform: scale(1.2);
+}
+
+.rank-1st .benefit-check { color: var(--pmi-blue); }
+.rank-2nd .benefit-check { color: var(--pmi-purple); }
+.rank-3rd .benefit-check { color: var(--pmi-orange); }
+
+/* SWAG SECTION */
+.prize-swag-section {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.swag-header-title {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: #555;
+  margin-bottom: 0.6rem;
+  font-weight: bold;
+}
+
+.swag-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.swag-tag-pill {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #999;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.3s ease;
+}
+
+.swag-tag-pill.redbull {
+  border-color: rgba(255, 215, 0, 0.15);
+}
+
+.swag-tag-pill.redbull:hover {
+  color: #ffd700;
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.05);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.15);
+}
+
+.swag-tag-pill.petricor {
+  border-color: rgba(181, 101, 29, 0.15);
+}
+
+.swag-tag-pill.petricor:hover {
+  color: #b5651d;
+  border-color: #b5651d;
+  background: rgba(181, 101, 29, 0.05);
+  box-shadow: 0 0 8px rgba(181, 101, 29, 0.15);
+}
+
+.swag-tag-pill.happyharry {
+  border-color: rgba(0, 209, 255, 0.15);
+}
+
+.swag-tag-pill.happyharry:hover {
+  color: var(--pmi-blue);
+  border-color: var(--pmi-blue);
+  background: rgba(0, 209, 255, 0.05);
+  box-shadow: 0 0 8px rgba(0, 209, 255, 0.15);
+}
+
+.swag-tag-pill.ibm {
+  border-color: rgba(0, 102, 255, 0.15);
+}
+
+.swag-tag-pill.ibm:hover {
+  color: #0062ff;
+  border-color: #0062ff;
+  background: rgba(0, 102, 255, 0.05);
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.15);
 }
 
 /* SCANLINE EFFECT */
@@ -190,6 +338,7 @@
   .prize-card {
     width: 100%;
     max-width: 400px;
+    min-height: auto !important;
     height: auto !important;
     padding: 30px;
   }
@@ -198,3 +347,118 @@
   
   .section-title { font-size: 2.2rem; }
 }
+
+/* PRIZES CTA BUTTON */
+.prizes-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  position: relative;
+  z-index: 5;
+}
+
+.btn-cyberpunk-prizes {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  background: transparent;
+  color: var(--pmi-white);
+  border: 2px solid var(--pmi-orange);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  padding: 1.15rem 2.75rem;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  overflow: visible;
+  transition: all 0.3s ease;
+  clip-path: polygon(0 0, 92% 0, 100% 30%, 100% 100%, 8% 100%, 0 70%);
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.2);
+}
+
+.btn-cyberpunk-prizes .doc-icon {
+  stroke: var(--pmi-orange);
+  transition: stroke 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-cyberpunk-prizes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--pmi-orange);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-cyberpunk-prizes:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-cyberpunk-prizes:hover {
+  color: #000;
+  border-color: var(--pmi-orange);
+  box-shadow: 0 0 25px var(--pmi-orange), inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-cyberpunk-prizes:hover .doc-icon {
+  stroke: #000;
+}
+
+.btn-cyberpunk-prizes .cyber-tag {
+  position: absolute;
+  bottom: -2px;
+  right: 20px;
+  font-size: 0.6rem;
+  color: var(--pmi-orange);
+  background: var(--background);
+  padding: 0 5px;
+  letter-spacing: 1px;
+  border: 1px solid var(--pmi-orange);
+  border-bottom: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-cyberpunk-prizes:hover .cyber-tag {
+  background: var(--pmi-white);
+  color: #000;
+  border-color: var(--pmi-white);
+}
+
+.btn-cyberpunk-prizes .cyber-corner-decor {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 6px;
+  height: 6px;
+  background: var(--pmi-blue);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-cyberpunk-prizes:hover .cyber-corner-decor {
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .btn-cyberpunk-prizes {
+    font-size: 0.85rem;
+    padding: 1rem 1.8rem;
+    letter-spacing: 1.5px;
+    width: 90%;
+    max-width: 360px;
+  }
+}
+

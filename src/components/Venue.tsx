@@ -19,15 +19,15 @@ const Venue = () => {
             <div className="terminal-content">
               <div className="location-data">
                 <span className="label">LOCAL:</span>
-                <span className="value">AUDITÓRIO SEPN 515 - ASA NORTE</span>
+                <span className="value">CEUB - CAMPUS ASA NORTE</span>
               </div>
               <div className="location-data">
                 <span className="label">COORDENADAS:</span>
-                <span className="value typing-animation">-15.7594° S, -47.8928° W</span>
+                <span className="value typing-animation">-15.7656° S, -47.8944° W</span>
               </div>
               <div className="location-data">
                 <span className="label">SETOR:</span>
-                <span className="value">SEPN 515, BLOCO A, ASA NORTE - BRASÍLIA/DF</span>
+                <span className="value">SEPN 707/907, ASA NORTE - BRASÍLIA/DF</span>
               </div>
               <div className="status-line">
                 <span className="status-indicator"></span>
@@ -37,7 +37,7 @@ const Venue = () => {
           </div>
 
           <a 
-            href="https://www.google.com/maps/search/?api=1&query=SEPN+515+Bloco+A+Brasilia" 
+            href="https://www.google.com/maps/search/?api=1&query=CEUB+Campus+Asa+Norte+Brasilia" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-route"
